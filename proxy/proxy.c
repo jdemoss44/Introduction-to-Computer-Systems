@@ -1,5 +1,6 @@
 /*
- * proxy.c - A program to act as a proxy between a client and a server for HTTP/1.0 Web requests using the GET method.
+ * proxy.c - A program to act as a proxy between a client and 
+ * a server for HTTP/1.0 Web requests using the GET method.
  * Author - Joshua DeMoss
  * 12/11/19
  *
@@ -17,11 +18,14 @@ void *thread(void *vargp);
 /* Recommended max cache and object sizes */
 #define MAX_CACHE_SIZE 1049000
 
-/* You won't lose style points for including this long line in your code */
+/* static variables to contain some headers that will always be sent in requests */
 static const char *user_agent_hdr = "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0r\r\n";
 static const char *connection_hdr = "Connection: close\r\n";
 static const char *proxy_connection_hdr = "Proxy-Connection: close\r\n";
 
+
+
+/* Listen for incoming connections and then service them using threading */
 int main(int argc, char **argv) 
 {
     /* Check command line args */
@@ -54,9 +58,11 @@ int main(int argc, char **argv)
   	return 0;
 }
 
-//Function that is called when a thread is made
-//It esentually just falls do it and makes sure to detach itself
-//from the main thread
+
+/*Function that is called when a thread is made
+* It esentually just calls do it and makes sure to detach itself
+* from the main thread
+*/
 void *thread(void *vargp)
 {
     int connfd = *((int *)vargp);
@@ -66,6 +72,7 @@ void *thread(void *vargp)
     Close(connfd);
     return NULL;
 }
+
 
 /*
  * doit - handle one HTTP request form client, forward it to server,
