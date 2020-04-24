@@ -39,6 +39,11 @@ void printHelpMsg() {
 			"  linux>  ./csim -v -s 8 -E 2 -b 4 -t traces/yi.trace\n");
 }
 
+/* Parse input and check validity.
+* If the file is valid, then read in all the 
+* memory access made by the program and print the number
+* of hits, misses, and evictions made by the cache simulator
+*/
 int main(int argc, char **argv)
 {	
 	int hits = 0, misses = 0, evictions = 0;
@@ -173,17 +178,11 @@ int main(int argc, char **argv)
 					cache[setNum][LRUindex] = tag;
 				}
 
-			//increase all elements in cacheC[setNum] by 1 to distinguish LRU
-			for(i = 0; i < E; i++){
-				cacheC[setNum][i]++;
-			}
-			// int j;
-			// for(i = 0; i < s; i++){
-			// 	for(j = 0; j < E; j++) {
-			// 		printf("\t%d: %lx ", i, cache[i][j]);
-			// 	}
-			// 	printf("\n");
-			// }
+				//increase all elements in cacheC[setNum] by 1 to distinguish LRU
+				for(i = 0; i < E; i++){
+					cacheC[setNum][i]++;
+				}
+
 			}
 
 		}
