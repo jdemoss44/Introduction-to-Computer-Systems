@@ -1,8 +1,12 @@
 /* 
  * tsh - A tiny shell program with job control
+ *
+ * Completed for Intro to Systems Course
+ * Methods that I implemented include: eval, builtin_cmd, do_bgfg, waitfg,
+ * sigchld_handler, sigtstp_handler, sigint_handler
  * 
  * <Put your name and login ID here>
- * Joshua Demoss -- joshdemoss
+ * Joshua DeMoss -- joshdemoss
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -139,7 +143,7 @@ int main(int argc, char **argv)
 		}
 		if ((fgets(cmdline, MAXLINE, stdin) == NULL) && ferror(stdin))
 			app_error("fgets error");
-	if (feof(stdin)) { /* End of file (ctrl-d) */
+	if (feof(stdin)) { 
 		fflush(stdout);
 		exit(0);
 	}
@@ -298,7 +302,7 @@ void eval(char *cmdline)
 	}
 
 /* 
- * do_bgfg - Execute the builtin bg and fg commands
+ * do_bgfg - Execute the builtin bg and fg commands (background and foreground)
  */
 	void do_bgfg(char **argv) 
 	{
@@ -348,7 +352,7 @@ void eval(char *cmdline)
 	}
 
 /* 
- * waitfg - Block until process pid is no longer the foreground process
+ * waitfg - Block until process pid is no longer in the foreground process
  */
 	void waitfg(pid_t pid)
 	{
