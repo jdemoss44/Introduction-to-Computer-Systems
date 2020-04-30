@@ -5,8 +5,7 @@
  * Methods that I implemented include: eval, builtin_cmd, do_bgfg, waitfg,
  * sigchld_handler, sigtstp_handler, sigint_handler
  * 
- * <Put your name and login ID here>
- * Joshua DeMoss -- joshdemoss
+ * Joshua DeMoss
  */
 #include <stdio.h>
 #include <stdlib.h>
