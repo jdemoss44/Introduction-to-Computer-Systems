@@ -1,4 +1,4 @@
-# Description of Systems Projects
+# Computer Systems Project Descriptions
 
 # Proj1 - Bit:
 File: bits.c
