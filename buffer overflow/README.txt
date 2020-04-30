@@ -1,3 +1,6 @@
+Main file: exploit.txt
+^ Several different buffer overflow inputs were used to disable the bomb. Unfortunately only the input for bomb number 4 is saved.
+
 This file contains materials for one instance of the attacklab.
 
 Files:
