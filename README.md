@@ -41,6 +41,8 @@ The purpose of this assignment is to become more familiar with the concepts of p
 signalling. This is done by writing a simple Unix shell program from scratch that supports job control.
 
 # Proj5 - Cache:
+Files: csim.c and trans.c
+
 This lab is designed to help understand the impact that cache memories can have on the performance of C programs.
 The lab consists of two parts. 
 
@@ -51,6 +53,8 @@ In the second part, the task is to optimize a small matrix
 transpose function, with the goal of minimizing the number of cache misses.
 
 # Proj6 - Proxy:
+File: proxy.c
+
 In this lab, the task was to write a simple HTTP proxy that caches web objects. 
 
 For the first part of the lab, the task was to set up the proxy to accept incoming connections, read and 
